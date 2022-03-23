@@ -1,0 +1,217 @@
+@media screen and (max-width:320px) {
+  /* CSS for screens that are 320 pixels or less will be put in this section */
+}
+@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab|Open+Sans&display=swap");
+html,
+body {
+  height: 100%;
+}
+
+h2 {
+  font-family: Arbutus Slab, serif;
+  font-weight: normal;
+  color: #000;
+  line-height: 1.25; }
+
+p {
+  position: absolute;
+  bottom: 0;
+  font-size: 14px; }
+
+.container {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 48px;
+  margin: 0 auto; }
+
+.card {
+  cursor: pointer;
+  position: relative;
+  height: 0;
+  padding-bottom: 120%;
+  --offset-multiplier: 4px;
+  transition: transform 0.6s ease;
+  --translate: 0;
+  transform: translate(var(--translate), var(--translate)); }
+  .card:hover {
+    --offset-multiplier: 6px; }
+  .card:hover {
+    --translate: calc(-1px * (var(--cards) - 1));
+    transition: transform 0.3s ease; }
+
+.child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  transition: inherit;
+  --translate: calc(var(--offset) * var(--offset-multiplier));
+  transform: translate(var(--translate), var(--translate));
+  z-index: 5; }
+  .child:nth-child(1) {
+    --offset: 0;
+    z-index: 4; }
+  .child:nth-child(2) {
+    --offset: 1;
+    z-index: 3; }
+  .child:nth-child(3) {
+    --offset: 2;
+    z-index: 2; }
+  .child:nth-child(4) {
+    --offset: 3;
+    z-index: 1; }
+  .child:nth-child(5) {
+    --offset: 4;
+    z-index: 0; }
+
+header {
+  height: 40%;
+  whidth: 60%;
+  background: lightgray;
+  position: relative;
+}
+
+.white_bg {
+  background-color: #FFF;
+  padding: 100px 0 100px 0;
+}
+
+.blue_bg {
+  background-color: #2F4262;
+  padding: 100px 0 100px 0;
+}
+
+.blue_bg h2 {
+  color: #FFF;
+}
+/* Primary Navigation Resets and Defaults*/
+
+nav.nav_primary {
+  display: table;
+  width: 60%;
+  background: #FFF;
+  line-height: 1.2em;
+  border-bottom: solid #ddd 1px;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 500
+}
+
+nav.nav_primary.fixed {
+  position: fixed;
+  top: 0;
+}
+
+nav.nav_primary ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.nav_primary li > a {
+  text-decoration: none;
+}
+
+nav.nav_primary .caret {
+  margin-left: 10px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: 5px solid #FFF;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: "";
+  opacity: .5;
+  filter: alpha(opacity=30);
+}
+/* Mobile Button*/
+
+.nav_primary_btn {
+  display: none;
+  margin: .5em;
+  color: #2D4060;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.nav_primary_btn:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.nav_primary_btn span {
+  display: inline-block;
+  margin-right: .25em;
+  vertical-align: middle;
+}
+
+.nav_primary_btn span span {
+  display: block;
+  height: 3px;
+  width: 20px;
+  margin: 4px 0;
+  background: #2D4060;
+  clear: both;
+  border-radius: 2px;
+}
+/* Level 1 (All) */
+
+nav.nav_primary ul.parent {
+  display: table-row;
+  width: 100%;
+}
+
+nav.nav_primary ul.parent > li {
+  display: table-cell;
+  position: relative;
+  border-right: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+nav.nav_primary ul.parent > li > a {
+  padding: 1em;
+  color: #2D4060;
+  text-align: center;
+  display: block;
+  font-weight: 700;
+}
+
+nav.nav_primary ul.parent > li.hover > a {
+  color: #3E5985;
+  background: #ddd;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Level 1 Dropdown (All)*/
+  
+  nav.nav_primary ul.parent {
+    display: none;
+  }
+  nav.nav_primary ul.parent.show {
+    display: block;
+  }
+  nav.nav_primary ul.parent > li {
+    display: block;
+  }
+  nav.nav_primary ul.parent > li > a {
+    text-align: left;
+    border-top: 1px solid #ddd;
+  }
+  nav.nav_primary .nav_primary_btn {
+    display: block;
+  }
+  @media screen and (max-width: 320px) {
+  /* comes into effect for screens less than or equal to 320 pixels */
+  #somethingorother {
+    width: 120px ;
+  }
+}
